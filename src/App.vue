@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app id="app">
+    <NavLeftDrawer></NavLeftDrawer>
+    <v-app-bar app clipped-left>
+      <v-toolbar-title>LMS</v-toolbar-title>
+      <NavHeaderBtn></NavHeaderBtn>
+    </v-app-bar>
+    <v-content>
+      <v-container fluid>
+        <v-fade-transition mode="out-in">
+          <router-view></router-view>
+        </v-fade-transition>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavLeftDrawer from './components/NavLeftDrawer.vue';
+import NavHeaderBtn from './components/NavHeaderBtn.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NavLeftDrawer,
+    NavHeaderBtn,
   }
-}
-</script>
+};
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+</script>
