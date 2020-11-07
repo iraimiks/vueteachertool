@@ -25,7 +25,9 @@ const router = new VueRouter({
       name: "Page 3",
       component: component3,
     },
-    { path: "*", redirect: "/page1" },
+    { path: "/",
+      name: "Home"
+    },
   ],
 });
 
